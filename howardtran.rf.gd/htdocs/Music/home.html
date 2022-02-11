@@ -1,0 +1,700 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   
+<!-- index.html  26 Nov 2019 03:50:59 GMT -->
+<head>
+      <!--Meta Tags-->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <meta name="author" content="" />
+      <style src='css/a.css'></style>
+    <div class="tet_left"><img src="https://anonyviet.com/resource/hodaoroi/left-1.png" alt="AnonyViet-Tet"/></div>
+    <div class="tet_right"><img src="https://anonyviet.com/resource/hodaoroi/right-1.png" alt="AnonyViet-Tet"/></div>
+    <div class="tet_bottom"><img src="https://anonyviet.com/resource/hodaoroi/bottom-1.png" alt="AnonyViet-Tet"/></div>
+      <script type="text/javascript">
+         var no = 20;
+         if (matchMedia('only screen and (max-width: 767px)').matches) {
+             no = 10        }
+         let img_url = 'https://anonyviet.com/resource/hodaoroi/hoadao.png';
+         var hidesnowtime = 0;
+         var color_snow  = '#fff';
+         var snowdistance = 'windowheight'; // windowheight or pageheight;
+         var ie4up = (document.all) ? 1 : 0;
+         var ns6up = (document.getElementById && !document.all) ? 1 : 0;
+         function iecompattest() {
+             return (document.compatMode && document.compatMode != 'BackCompat') ? document.documentElement : document.body
+         }
+         var dx, xp, yp;
+         var am, stx, sty;
+         var i, doc_width = 800, doc_height = 600;
+         if (ns6up) {
+             doc_width = self.innerWidth;
+             doc_height = self.innerHeight
+         } else if (ie4up) {
+             doc_width = iecompattest().clientWidth;
+             doc_height = iecompattest().clientHeight
+         }
+         dx = new Array();
+         xp = new Array();
+         yp = new Array();
+         am = new Array();
+         stx = new Array();
+         sty = new Array();
+         for (i = 0; i < no; ++i) {
+             dx[i] = 0;
+             xp[i] = Math.random() * (doc_width - 50);
+             yp[i] = Math.random() * doc_height;
+             am[i] = Math.random() * 20;
+             stx[i] = 0.02 + Math.random() / 10;
+             sty[i] = 0.7 + Math.random();
+             if (ie4up || ns6up) {
+                 document.write('<div id="dot'+i+'" style="POSITION:fixed;Z-INDEX:'+(99+i)+';VISIBILITY:visible;TOP:15px;LEFT:15px;pointer-events: none;width:15px"><span style="font-size:18px;color:'+color_snow+'"><img src="'+img_url+'" alt=""></span></div>');
+             }
+         }
+         function snowIE_NS6() {
+             doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+             doc_height = (window.innerHeight && snowdistance == 'windowheight') ? window.innerHeight : (ie4up && snowdistance == 'windowheight') ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == 'pageheight') ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+             for (i = 0; i < no; ++i) {
+                 yp[i] += sty[i];
+                 if (yp[i] > doc_height - 50) {
+                     xp[i] = Math.random() * (doc_width - am[i] - 30);
+                     yp[i] = 0;
+                     stx[i] = 0.02 + Math.random() / 10;
+                     sty[i] = 0.7 + Math.random()
+                 }
+                 dx[i] += stx[i];
+                 document.getElementById('dot' + i).style.top = yp[i] + 'px';
+                 document.getElementById('dot' + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + 'px'
+             }
+             snowtimer = setTimeout('snowIE_NS6()', 10)
+         }
+         function hidesnow() {
+             if (window.snowtimer) {
+                 clearTimeout(snowtimer)
+             }
+             for (i = 0; i < no; i++) document.getElementById('dot' + i).style.visibility = 'hidden'
+         }
+         if (ie4up || ns6up) {
+             snowIE_NS6();
+             if (hidesnowtime > 0) setTimeout('hidesnow()', hidesnowtime * 1000)
+         }
+     </script>
+     
+      <!--Favicons-->
+      <link rel="shortcut icon" href="images/favicon.png">
+      <!--Page Title-->
+      <title>Khoa - Home</title>
+      <!-- Bootstrap  -->
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="css/animate.css">
+      <!-- Awesome Fonts-->
+      <link rel="stylesheet" href="css/all.min.css">
+      <!-- Flexslider  -->
+      <link rel="stylesheet" href="css/flexslider.css">
+      <!--Main Styles Css-->
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      
+      <!-- Preloader -->
+      <div id="preloader">
+         <div class="pre-container">
+            <div class="spinner">
+               <div class="double-bounce1"></div>
+               <div class="double-bounce2"></div>
+            </div>
+         </div>
+      </div>
+      <!-- Εnd Preloader -->
+      
+      <!-- Main menu -->
+<div id="player">
+    <audio controls autoplay hidden>
+     <source src="Music/bg.mp3" type="audio/mpeg">
+                unsupported !! 
+    </audio>
+</div>
+      <nav id="main-nav">
+         <a href="#" class="js-nav-toggle nav-toggle active"><i></i></a>
+         <div class="js-fullheight table">
+            <div class="table-cell js-fullheight">
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="work.html">Work</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+               <!-- Social -->
+               <p class="social-icon">
+                  <a href="#"><i class="fab fa-facebook-square"></i></a>
+                  <a href="#"><i class="fab fa-twitter-square"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+               </p>
+            </div>
+         </div>
+      </nav>
+      <!-- Scroll icon -->
+      <div class="scroll-icon">
+         <a href="#info" class="smoothscroll">
+            <div class="mouse"></div>
+         </a>
+         <div class="end-top"></div>
+      </div>
+      <div id="page">
+
+         <!-- header -->
+         <header class="header">
+            <div class="container">
+               <div class="navbar-brand">
+                  <div class="row">
+                     <div class="col-xs-6">
+                        <!-- Logo -->
+                        <h1 class="text-left"><a class="logo" href="index.html">Anh Khoa</a></h1>
+                     </div>
+                  </div>
+                  <!-- Nav toggle -->
+                  <a href="#" class="js-nav-toggle nav-toggle"><i></i></a>
+               </div>
+            </div>
+         </header>
+         <!-- End Header -->
+
+         <!-- Banner section -->
+         <section id="banner" class="js-fullheight">
+            <div class="flexslider js-fullheight">
+               <!-- Social -->
+               <ul class="list-unstyled ml-5 mt-3 position-relative social-links">
+                  <li class="mb-3"><a href="https://www.facebook.com/AnonKhoa07"><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="mb-3"><a href="https://twitter.com/AnonKhoa07"><i class="fab fa-twitter"></i></a></li>
+                  <li class="mb-3"><a href="https://www.instagram.com/AnonKhoa07"><i class="fab fa-instagram"></i></a></li>
+               </ul>
+               <!-- Slider -->
+               <ul class="slides">
+                  <li style="background-image: url(images/slide_1.jpg);">
+                     <div class="overlay-gradient"></div>
+                     <div class="container">
+                        <div class="col-md-8 js-fullheight slider-text">
+                           <div class="slider-text-inner">
+                              <div class="desc">
+                                 <h2>I'm Anh Khoa Tran!</h2>
+                                 <h3>I am a
+                                    <span id="typed-slide-1"></span>
+                                    <span id="typed-strings-slide-1">
+                                    <span>Designer</span>
+                                    <span>Junior ethical hacker</span>
+                                    <span>Marketer</span>
+                                    </span>
+                                 </h3>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li style="background-image: url(images/slide_1.jpg);">
+                     <div class="overlay-gradient"></div>
+                     <div class="container">
+                        <div class="col-md-8 js-fullheight slider-text">
+                           <div class="slider-text-inner">
+                              <div class="desc">
+                                 <h2>I'm Anh Khoa Tran!</h2>
+                                 <h3>I am a
+                                    <span id="typed-slide-2"></span>
+                                    <span id="typed-strings-slide-2">
+                                    <span>Coder</span>
+                                    <span>Freelancer</span>
+                                    <span>Computer technician</span>
+                                    </span>
+                                 </h3>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <!-- End Banner Section -->
+
+         <!-- About Section -->
+         <section id="about">
+            <div class="container">
+               <div class="row">
+             
+                  <div class="col-md-12">
+                     <div class="post-entry">
+
+                        <div class="col-md-6">
+                            <div class="header-page-about">
+                              <h2 class="intro-heading">About Me</h2>
+                           </div>
+                            <p>Still working on that!</p>
+                           <div class="col-md-6 col-sm-4 no-padding">
+                              <ul>
+                                 <li><span>Name : </span> Tran Anh Khoa</li>
+                                 <li><span>Job : </span> Ethical hacker</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 col-sm-4 no-padding">
+                              <ul>
+                                 <li><span>Email : </span> <a href="#">AnonKhoa07@vnanon.onmicrosoft.com</a></li>
+                                 <li><span>Phone : </span> <a href="#"> +1 224-218-0203</a></li>
+                              </ul>
+                           </div>
+                           <hr>
+                           <div class="col-md-12 no-padding mt-20">
+                              <a class="btn btn " href="#">Download CV</a>
+                              <a class="btn btn-primary" href="https://facebook.com/AnonKhoa07">Hire Me</a> 
+                           </div>
+                        </div>
+
+                        <div class="col-md-6">
+                           <div class="post-image" style="background-image: url(images/profile-pic.jpg);"></div>
+                           <div class="display-tc">
+                              <div class="desc">
+                                 <h3>My skill</h3>
+                                 <div class="skill-item">
+                                    <h5>HTML & CSS</h5><span>75%</span>
+                                    <div class="progress" data-percent="75%">
+                                       <div class="progress-bar bar-null" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                    </div>
+                                 </div>
+                                 <div class="skill-item">
+                                    <h5>HACKING WIRELESS NETWORK</h5><span>75%</span>
+                                    <div class="progress" data-percent="75%">
+                                       <div class="progress-bar bar-null" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                    </div>
+                                 </div>
+                                 <div class="skill-item">
+                                    <h5>SOCIAL ENGINEERING</h5><span>90%</span>
+                                    <div class="progress" data-percent="90%">
+                                       <div class="progress-bar bar-null" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </section>
+         <!-- End About Section -->
+
+         <!-- Resume Section -->
+         <section id="resume" class="bg-dark bg-dots">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center heading">
+                     <div class="header-page">
+                        <h2>My Resume</h2>
+                        <span></span>
+                     </div>
+                     <span class="heading-meta-sub">RESUME</span>
+                     <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="col-md-6">
+                        <div class="item mb-40">
+                           <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>GREY HAT HACKER - CODER</h4>
+                           <span class="meta">12.2020 </span>
+                           <h5>ZEROXTEAM</h5>
+                           <p>Help our team’s members to code, to hack, and create a full tutorial-guides in Discord</p>
+                        </div>
+                        <div class="item mb-40">
+                           <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>SUPPORTER- ONLINE MARKETING</h4>
+                           <span class="meta">05.2020 - 010.2021</span>
+                           <h5>7ONEZ</h5>
+                           <p>Support people who get their account hacked, teach people how to prevent scam, prevent social engineer and SEO, social media marketing.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Resume Section -->
+         <!-- Services Section -->
+         <section id="services" class="bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center heading">
+                     <div class="header-page">
+                        <h2>My Services</h2>
+                        <span></span>
+                     </div>
+                     <span class="heading-meta-sub">SERVICES</span>
+                     <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="fab fa-codepen"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>01</h2>
+                        </div>
+                        <div class="text">
+                           <h3>Network security</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan. </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>02</h2>
+                        </div>
+                        <div class="text">
+                           <h3>Graphic Design</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan. </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>03</h2>
+                        </div>
+                        <div class="text">
+                           <h3>Search engine optimization</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>04</h2>
+                        </div>
+                        <div class="text">
+                           <h3>Web Development</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan. </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>05</h2>
+                        </div>
+                        <div class="text">
+                           <h3>User Interface</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan. </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="service">
+                        <div class="icon">
+                           <i class="far fa-life-ring"></i>
+                        </div>
+                        <div class="box-num">
+                           <h2>06</h2>
+                        </div>
+                        <div class="text">
+                           <h3>Help &amp; Support</h3>
+                           <p>Phasellus eget neque et lectus pharetra accumsan. </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Resume Section -->
+         
+         <!-- Counters Section -->
+         <div class="counters" id="counter-animate">
+            <div class="narrow-content">
+               <div class="container">
+               <div class="row" >
+                  <div class="col-md-12"> 
+                     <div class="col-md-3 text-center">
+                        <span class="counter js-counter" data-from="0" data-to="95" data-speed="1500" data-refresh-interval="50"></span>
+                        <span class="counter-label">Project</span>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <span class="counter js-counter" data-from="0" data-to="15" data-speed="670" data-refresh-interval="50"></span>
+                        <span class="counter-label">Clients</span>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <span class="counter js-counter" data-from="0" data-to="15" data-speed="670" data-refresh-interval="50"></span>
+                        <span class="counter-label">Happy Client</span>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <span class="counter js-counter" data-from="0" data-to="9" data-speed="580" data-refresh-interval="50"></span>
+                        <span class="counter-label">Awards </span>
+                     </div>
+                  </div>
+               </div>
+               </div>
+            </div>
+         </div>
+         <!-- End Counters Section -->
+
+         <!-- Works Section -->
+         <section id="work" class="bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center heading">
+                     <div class="header-page">
+                        <h2>My Projects</h2>
+                        <span></span>
+                     </div>
+                     <span class="heading-meta-sub">PORTFOLIO</span>
+                     <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12 px-25 text-center">
+                     <ul class="work-filter">
+                        <li class="filter all active" data-filter="*">All</li>
+                        <li class="filter" data-filter=".branding">Branding</li>
+                        <li class="filter" data-filter=".web">Web</li>
+                        <li class="filter" data-filter=".mobile">Mobile</li>
+                        <li class="filter" data-filter=".photo">Photography</li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-12">
+                     <div class="work-gallery"> 
+                        <div class="col-lg-4 col-md-6 col-sm-12 all photo mobile">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-1.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 1</a></h3>
+                                    <span>Branding, Photography</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 all web">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-2.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 2</a></h3>
+                                    <span>Mobile, Web, Branding</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>          
+                        <div class="col-lg-4 col-md-6 col-sm-12 all branding web">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-3.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 3</a></h3>
+                                    <span>Mobile, Web</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 all web branding">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-4.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 4</a></h3>
+                                    <span>Web, Branding</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>            
+                        <div class="col-lg-4 col-md-6 col-sm-12 all mobile">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-5.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 5</a></h3>
+                                    <span>Logo Desinger </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 all branding">
+                           <div class="work">
+                              <img class="img-fluid" src="images/work-6.jpg" alt="">
+                              <div class="desc">
+                                 <div class="con">
+                                    <h3><a href="work-single.html">Work 6</a></h3>
+                                    <span>Web, Branding</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Works Section -->
+
+         <!-- Blog Section -->
+         <section id="blog" class="bg-section bg-dark">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center heading">
+                     <div class="header-page">
+                        <h2>Blog</h2>
+                        <span></span>
+                     </div>
+                     <span class="heading-meta-sub">BLOG</span>
+                     <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="blog">
+                        <a href="blog.html"><img class="img-responsive" src="images/img-1.jpg" alt=""></a>
+                        <div class="blog-text">
+                           <span class="posted_on">21 Nov 2019</span>
+                           <h3><a href="blog.html">ALIQUAM IN PELLENTESQUE LIBERO.</a></h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas auctor vitae felis non.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="blog">
+                        <a href="blog.html"><img class="img-responsive" src="images/img-2.jpg" alt=""></a>
+                        <div class="blog-text">
+                           <span class="posted_on">21 Nov 2019</span>
+                           <h3><a href="blog.html">ALIQUAM IN PELLENTESQUE LIBERO.</a></h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas auctor vitae felis non.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="blog">
+                        <a href="blog.html"><img class="img-responsive" src="images/img-3.jpg" alt=""></a>
+                        <div class="blog-text">
+                           <span class="posted_on">21 Nov 2019</span>
+                           <h3><a href="blog.html">ALIQUAM IN PELLENTESQUE LIBERO.</a></h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas auctor vitae felis non.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Blog Section -->
+
+         <!-- Contact Section -->
+         <section id="contact" class="bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center heading">
+                     <div class="header-page">
+                        <h2>Get In Touch</h2>
+                        <span></span>
+                     </div>
+                     <span class="heading-meta-sub">CONTACT</span>
+                     <p>Contact me through my information below:</p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-3 col-md-push-1">
+                     <ul class="contact-info">
+                        <li><i class="fas fa-map-marked-alt"></i>45 Nhiêu Tứ,P.7,Q. Phú Nhuận,TP.HCM</li>
+                        <li><i class="fas fa-phone-alt"></i>+1 224-218-0203</li>
+                        <li><i class="fas fa-envelope"></i><a href="#">AnonKhoa07@vnanon.onmicrosoft.com</a></li>
+                        <li><i class="fas fa-globe"></i><a href="#">www.yoursite.com</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-7 col-md-push-1">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Name">
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Email">
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="form-group">
+                              <textarea name="message" class="form-control" id="message" cols="30" rows="7" placeholder="Message"></textarea>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="form-group text-right">
+                              <input type="submit" value="Send Message" class="btn btn-primary">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Contact Section -->
+
+         <!-- Footer -->
+         <footer>
+            <div id="footer">
+               <div class="container">
+                  <div class="row copy-right">
+                     <div class="col-md-6 col-md-offset-3 text-center">
+                        <!-- Footer logo -->
+                        <h2><a class="footer-logo" href="index.html">Khoa</a></h2>
+                        <!-- Social -->
+                        <p class="social-icon">
+                           <a href="https://facebook.com/AnonKhoa07"><i class="fab fa-facebook-square"></i></a>
+                           <a href="https://twitter.com/AnonKhoa07"><i class="fab fa-twitter-square"></i></a>
+                           <a href="https://instagram.com/AnonKhoa07"><i class="fab fa-instagram"></i></a>
+                           <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Back to top button -->
+            <a id="back-to-top" href="#"><i class="fas fa-chevron-up"></i></a>
+         </footer>
+         <!-- End Footer -->
+      </div>
+      <!-- jQuery -->
+      <script src="js/jquery.min.js"></script>
+      <!-- jQuery Easing -->
+      <script src="js/jquery.easing.1.3.js"></script>
+      <!-- Bootstrap -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Waypoints -->
+      <script src="js/jquery.waypoints.min.js"></script>
+      <!-- Counters -->
+      <script src="js/jquery.countTo.js"></script>
+      <!-- Flexslider -->
+      <script src="js/jquery.flexslider-min.js"></script>
+      <!-- isotope js -->
+      <script src="js/isotope.pkgd.min.js"></script>
+      <!-- isotope image loader js -->
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <!-- Typed -->
+      <script src="js/typed.min.js"></script>
+      <!-- Custom JS -->
+      <script src="js/custom.js"></script>
+      
+   </body>
+</html>
